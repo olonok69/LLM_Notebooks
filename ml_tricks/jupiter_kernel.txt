@@ -1,0 +1,13 @@
+https://ipython.readthedocs.io/en/stable/install/kernel_install.html
+
+conda create -n test python=3.11 pip
+
+conda activate test
+
+conda install jupyter
+
+python -m ipykernel install --user --name test --display-name "Python (test)"
+
+deactivate
+
+conda remove -n test --all
