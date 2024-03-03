@@ -1,2 +1,2 @@
-ml_Solutions/azure_ml/.env
-ml_Solutions/azure_ml/config/config.json
+ml_Solutions/azure_ml/single-job/.env
+ml_Solutions/azure_ml/single-job/config/config.json
