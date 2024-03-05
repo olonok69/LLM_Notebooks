@@ -2,3 +2,5 @@ ml_Solutions/azure_ml/single-job/.env
 ml_Solutions/azure_ml/single-job/config/config.json
 ml_Solutions/azure_ml/pipeline_with_components_from_yaml/.env
 ml_Solutions/azure_ml/pipeline_with_parallel_nodes/.env
+ml_Solutions/azure_ml/inference_end_point_qa/.env
+ml_Solutions/azure_ml/inference_end_point_qa/config/config.json
