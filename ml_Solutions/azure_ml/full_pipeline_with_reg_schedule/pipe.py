@@ -21,6 +21,7 @@
 # https://learn.microsoft.com/en-us/azure/machine-learning/how-to-schedule-pipeline-job?view=azureml-api-2&tabs=python
 # Batch Pipeline
 # https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-pipeline-python-sdk?view=azureml-api-2
+# https://learn.microsoft.com/en-us/azure/machine-learning/how-to-use-batch-pipeline-from-job?view=azureml-api-2&source=recommendations&tabs=python
 
 # import required libraries
 from azure.identity import DefaultAzureCredential
