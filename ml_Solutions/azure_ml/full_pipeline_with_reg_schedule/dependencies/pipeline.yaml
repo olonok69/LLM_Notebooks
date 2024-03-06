@@ -1,0 +1,67 @@
+compute: azureml:serverless
+creation_context:
+  created_at: '2024-03-06T15:24:44.336181+00:00'
+  created_by: ***REMOVED***
+  created_by_type: Application
+description: E2E data_perp-train pipeline
+display_name: credit_defaults_pipeline
+experiment_name: e2e_registered_components
+id: azureml:/subscriptions/***REMOVED***/resourceGroups/olonok-ml/providers/Microsoft.MachineLearningServices/workspaces/azure-ml/jobs/kind_animal_yx7t4hdz3z
+inputs:
+  pipeline_job_data_input:
+    mode: ro_mount
+    path: azureml://subscriptions/***REMOVED***/resourcegroups/olonok-ml/workspaces/azure-ml/datastores/workspaceblobstore/paths/LocalUpload/4b1dfc4d12429b46389cabdf25b886a2/default_of_credit_card_clients.csv
+    type: uri_file
+  pipeline_job_learning_rate: '0.05'
+  pipeline_job_registered_model_name: credit_defaults_model
+  pipeline_job_test_train_ratio: '0.25'
+jobs:
+  data_prep_job:
+    component: azureml:data_prep_credit_defaults:1
+    inputs:
+      data:
+        path: ${{parent.inputs.pipeline_job_data_input}}
+      test_train_ratio:
+        path: ${{parent.inputs.pipeline_job_test_train_ratio}}
+    outputs:
+      test_data: ${{parent.outputs.pipeline_job_test_data}}
+      train_data: ${{parent.outputs.pipeline_job_train_data}}
+    resources:
+      instance_count: 1
+    type: command
+  train_job:
+    component: azureml:train_credit_defaults_model:1
+    inputs:
+      learning_rate:
+        path: ${{parent.inputs.pipeline_job_learning_rate}}
+      registered_model_name:
+        path: ${{parent.inputs.pipeline_job_registered_model_name}}
+      test_data:
+        path: ${{parent.jobs.data_prep_job.outputs.test_data}}
+      train_data:
+        path: ${{parent.jobs.data_prep_job.outputs.train_data}}
+    resources:
+      instance_count: 1
+    type: command
+name: kind_animal_yx7t4hdz3z
+outputs:
+  pipeline_job_test_data:
+    mode: rw_mount
+    type: uri_folder
+  pipeline_job_train_data:
+    mode: rw_mount
+    type: uri_folder
+properties:
+  azureml.git.dirty: 'True'
+  mlflow.source.git.branch: main
+  mlflow.source.git.commit: 5d849ceb78da203f78e10f81bc9f4aa75669af77
+  mlflow.source.git.repoURL: https://github.com/Azure/azureml-examples
+services:
+  Studio:
+    endpoint: https://ml.azure.com/runs/kind_animal_yx7t4hdz3z?wsid=/subscriptions/***REMOVED***/resourcegroups/olonok-ml/workspaces/azure-ml&tid=***REMOVED***
+    type: Studio
+  Tracking:
+    endpoint: azureml://uksouth.api.azureml.ms/mlflow/v1.0/subscriptions/***REMOVED***/resourceGroups/olonok-ml/providers/Microsoft.MachineLearningServices/workspaces/azure-ml?
+    type: Tracking
+status: NotStarted
+type: pipeline
