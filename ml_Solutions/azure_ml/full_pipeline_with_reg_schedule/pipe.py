@@ -72,7 +72,7 @@ my_path = "./data/default_of_credit_card_clients.csv"
 v1 = "initial"
 
 my_data = Data(
-    name="credit-card",
+    name="credit-card-dataset",
     version=v1,
     description="Credit card data",
     path=my_path,
@@ -81,7 +81,7 @@ my_data = Data(
 
 ## create data asset if it doesn't already exist:
 try:
-    data_asset = ml_client.data.get(name="credit-card", version=v1)
+    data_asset = ml_client.data.get(name="credit-card-dataset", version=v1)
     print(
         f"Data asset already exists. Name: {my_data.name}, version: {my_data.version}"
     )
@@ -91,7 +91,7 @@ except:
 
 
 # get a handle of the data asset and print the URI
-credit_data = ml_client.data.get(name="credit-card", version="initial")
+credit_data = ml_client.data.get(name="credit-card-dataset", version="initial")
 print(f"Data asset URI: {credit_data.path}")
 
 #### CREATE ENVIRONMENT FOR PIPELINE FROM YAML FILE
@@ -105,7 +105,7 @@ pipeline_job_env = Environment(
     tags={"scikit-learn": "0.24.2"},
     conda_file=os.path.join(dependencies_dir, "conda.yaml"),
     image="mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest",
-    version="0.2.0",
+    version="0.3.0",
 )
 pipeline_job_env = ml_client.environments.create_or_update(pipeline_job_env)
 

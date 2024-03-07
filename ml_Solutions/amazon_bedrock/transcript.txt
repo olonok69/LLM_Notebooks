@@ -1,0 +1,20 @@
+spk_0: Hi, is this the Crystal Heights Hotel in Singapore? 
+spk_1: Yes, it is. Good afternoon. How may I assist you today? 
+spk_0: Fantastic, good afternoon. I was looking to book a room for my 10th wedding anniversary. Ive heard your hotel offers exceptional views and services. Could you tell me more? 
+spk_1: Absolutely, Alex and congratulations on your upcoming anniversary. Thats a significant milestone and wed be honored to make it a special occasion for you. We have several room types that offer stunning views of the city skyline and the fictional Sapphire Bay. Our special diamond suite even comes with exclusive access to the moonlit pool and star deck. We also have in house spa services, world class dining options and a shopping arcade. 
+spk_0: That sounds heavenly. I think my spouse would love the moonlit pool. Can you help me make a reservation for one of your diamond suites with a sapphire bay view? 
+spk_1: Of course. May I know the dates you planning to visit? 
+spk_0: Sure. It would be from October 10th to 17th. 
+spk_1: Excellent. Let me check the availability. Ah It looks like we have a diamond suite available for those dates. Would you like to proceed with the reservation? 
+spk_0: Definitely. Whats included in the package? 
+spk_1: Wonderful. The package includes breakfast, complimentary access to the moonlit pool and star deck. A one time spa treatment for two and a special romantic dinner at our cloud nine restaurant. 
+spk_0: You making it impossible to resist. Lets go ahead with the booking. 
+spk_1: Great. I'll need some personal information for the reservation. Can I get your full name, contact details and a credit card for the preauthorizations? 
+spk_0: Certainly. My full name is Alexander Thompson. My contact number is 12345678910. And the credit card is, wait, did you say pre authorization? How much would that be? 
+spk_1: Ah, I should have mentioned that earlier. My apologies. A pre authorization amount of '$1000' will be held on your card which would be released upon checkout. 
+spk_0: '$1000'. That seems a bit excessive. Don't you think 
+spk_1: I understand your concern, Alex. The pre authorization is a standard procedure to cover any incidental expenses you may incur during your stay. However, I assure you its only a hold and not an actual charge. 
+spk_0: Thats still a lot. Are there any additional charges that I should know about? 
+spk_1: Well, there is a 10% service charge and a 7% fantasy tax applied to the room rate. 
+spk_0: Mm. You know what its a special occasion. So lets go ahead. 
+spk_1: Thank you, Alex for understanding. Will ensure that your experience at Crystal Heights is well worth it. 
