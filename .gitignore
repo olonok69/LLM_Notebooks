@@ -6,3 +6,7 @@ ml_Solutions/azure_ml/inference_end_point_qa/.env
 ml_Solutions/azure_ml/inference_end_point_qa/config/config.json
 ml_Solutions/azure_ml/full_pipeline_with_endpoint_registration/.env
 ml_Solutions/azure_ml/full_pipeline_with_reg_schedule/.env
+langchain/chroma
+mlflow/.env
+mlflow/mlflow.db
+mlflow/mlruns
