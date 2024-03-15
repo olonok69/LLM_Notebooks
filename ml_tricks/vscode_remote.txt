@@ -1,0 +1,13 @@
+Install Remote Explorer plugin vscode
+
+create config in your .ssh folder
+
+https://code.visualstudio.com/docs/remote/ssh#_remember-hosts-and-advanced-settings
+
+example
+Host 172.173.199.194
+  HostName 172.173.199.194
+  IdentityFile ~/.ssh/Detect-AI_key.pem
+  User detectai
+
+
