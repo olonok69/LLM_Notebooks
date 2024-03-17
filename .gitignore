@@ -10,3 +10,5 @@ langchain/chroma
 mlflow/.env
 mlflow/mlflow.db
 mlflow/mlruns
+ml_Solutions/azure_ml/finetune_classification/.env
+ml_Solutions/azure_ml/finetune_classification/emotion-dataset
