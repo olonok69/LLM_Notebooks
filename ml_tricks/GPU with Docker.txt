@@ -1,0 +1,35 @@
+Links
+Nvidia Container https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+check with nvidia-container-cli info
+
+Docker in WSL https://docs.docker.com/desktop/wsl/
+check with nvidia-smi 
+
+
+
+Use in Docker Desktop
+Include libraries you plan to use with GPU support
+example : RUN pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+
+https://docs.docker.com/desktop/gpu/
+include --gpus=all
+
+
+
+
+Use in Docker Compose 
+Include section deploy with GPU reservation
+document_classification:
+    container_name: document_classification
+    image: acrdetectaideveastus.azurecr.io/detectai-document_classification:${AI_BUILD_ID}
+    volumes:
+      - ../../models/nlp/document_classification:/document_classification/models
+    ports:
+      - 5014:5014
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
