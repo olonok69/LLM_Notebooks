@@ -1,0 +1,43 @@
+
+# Ensure you have installed the latest nvidia driver in your windows distribution
+wsl --update
+wsl --set-default-version 2
+wsl --list
+wsl --list --online   
+wsl --install Debian --> provide User and password
+exit 
+
+#to login via command line
+wsl --distribution Debian --user olonok
+
+#update linux
+sudo apt update && sudo apt upgrade
+sudo apt-key del 7fa2af80
+# Install python and virtualenv
+sudo apt install python3 python3-pip virtualenv
+#create environtment
+mkdir ~/python-environments && cd ~/python-environments
+virtualenv pytorch
+ls pytorch/lib
+source pytorch/bin/activate
+
+#install pytorch and cuda toolkit
+python -m  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# check nvidia
+nvidia-smi
+
+#check python
+python
+import torch
+torch.cuda.is_available()
+
+it has to respond True
+
+exit from python
+exit from wsl
+
+
+to remove wsl distribution
+
+wsl --unregister Debian
