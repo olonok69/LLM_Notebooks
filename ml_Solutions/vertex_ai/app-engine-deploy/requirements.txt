@@ -1,0 +1,5 @@
+streamlit
+google-cloud-aiplatform
+pandas
+numpy
+python-dotenv
