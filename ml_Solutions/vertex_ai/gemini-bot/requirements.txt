@@ -1,0 +1,12 @@
+streamlit
+google-cloud-aiplatform
+pandas
+numpy
+python-dotenv
+streamlit-js-eval
+st-pages
+PyMuPDF
+streamlit_pdf_viewer
+ipython
+google-cloud-logging
+scikit-learn
