@@ -1,0 +1,19 @@
+_Resources
+
+# Secrets ---------------------
+
+.secrets/*
+*.key
+*key.pem
+.env
+# Volumes ---------------------
+
+db/.docker_volumes/*
+
+# MLflow ----------------------
+
+mlruns
+outputs
+mlflow/mflow.db
+mlflow/mlruns
+archive
