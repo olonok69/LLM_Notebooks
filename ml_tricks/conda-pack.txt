@@ -1,0 +1,16 @@
+
+# create conda env
+conda create -n testpack python=3.12
+
+# activate conda env
+conda activate testpack
+
+# pack the conda env to a file
+conda install -c conda-forge conda-pack
+conda pack -n testpack -o ./test-pack.tgz --ignore-editable-packages
+
+# unpack the conda env to a new env
+mkdir -p /home/olonok/anaconda3/envs/testpack-restored
+tar -xzvf test-pack.tgz -C /home/olonok/anaconda3/envs/testpack-restored
+conda activate testpack-restored
+conda-unpack
