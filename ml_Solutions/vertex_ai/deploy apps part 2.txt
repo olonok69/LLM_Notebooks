@@ -1,0 +1,60 @@
+Install Anaconda 
+###############################################
+https://docs.anaconda.com/free/anaconda/install/
+
+repository anaconda
+https://repo.anaconda.com/archive/
+
+Steps
+
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+
+sudo apt-get install curl
+
+curl -O https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+
+bash ./Anaconda3-2024.02-1-Linux-x86_64.sh
+
+source ~/.bashrc
+
+Install Miniconda 
+####################################################
+wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh
+
+sudo apt-get install git nano curl
+
+Install git
+###################################
+git config --global user.email email
+git config --global user.name user
+git clone
+
+
+INSTALL Docker
+################################################################
+
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+BUILD AND RUN Docker
+########################################
+sudo docker build --pull --rm --build-arg user_app=app -f "Dockerfile" -t gemini-bot:latest "."
+sudo docker run -p 8501:8501 -v "/home/olonok_gmail_com/prompts/table:/home/app/gemini/prompts/table" -v "/home/olonok_gmail_com/answers:/home/app/gemini/answers" gemini-bot:latest &
+sudo docker stop 04d2b7fd4d36
+sudo docker exec -it e8ea591bb2aa bash
