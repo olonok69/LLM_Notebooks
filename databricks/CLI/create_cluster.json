@@ -1,0 +1,24 @@
+{
+    "cluster_name": "test_cluster-2",
+    "spark_version": "13.3.x-cpu-ml-scala2.12",
+    "spark_conf": {
+        "spark.master": "local[*, 4]",
+        "spark.databricks.cluster.profile": "singleNode"
+    },
+    "azure_attributes": {
+        "first_on_demand": 1,
+        "availability": "ON_DEMAND_AZURE",
+        "spot_bid_max_price": -1
+    },
+    "node_type_id": "Standard_DS3_v2",
+    "driver_node_type_id": "Standard_DS3_v2",
+    "custom_tags": {
+        "ResourceClass": "SingleNode"
+    },
+    "autotermination_minutes": 120,
+    "enable_elastic_disk": true,
+    "single_user_name": "olonok@hotmail.com",
+    "data_security_mode": "LEGACY_SINGLE_USER_STANDARD",
+    "runtime_engine": "STANDARD",
+    "num_workers": 0
+}

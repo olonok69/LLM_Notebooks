@@ -1,0 +1,46 @@
+{
+  "name" : "execution",
+  "tasks" : [
+    {
+      "task_key" : "run_notebook_from_api",
+        "new_cluster":{
+                "spark_version": "15.1.x-cpu-ml-scala2.12",
+    "spark_conf": {
+        "spark.master": "local[*, 4]",
+        "spark.databricks.cluster.profile": "singleNode"
+    },
+    "azure_attributes": {
+        "first_on_demand": 1,
+        "availability": "ON_DEMAND_AZURE",
+        "spot_bid_max_price": -1
+    },
+    "node_type_id": "Standard_DS3_v2",
+    "driver_node_type_id": "Standard_DS3_v2",
+    "custom_tags": {
+        "ResourceClass": "SingleNode"
+    },
+
+    "enable_elastic_disk": True,
+    "single_user_name": "olonok@hotmail.com",
+    "data_security_mode": "LEGACY_SINGLE_USER_STANDARD",
+    "runtime_engine": "STANDARD",
+    "num_workers": 0,
+               
+            },
+      "notebook_task" : {
+        "notebook_path" : "/Workspace/Repos/olonok@hotmail.com/test1/execution",
+        "source" : "WORKSPACE",
+        "base_parameters": {
+            "name": "kevin",
+			"city": "paris",
+  
+            }
+        }
+    }
+  ],
+  "timeout_seconds" : 3600,
+  "tags" : {
+    "project" : "data_analytics",
+    "process" : "extraction"
+   } 
+}
