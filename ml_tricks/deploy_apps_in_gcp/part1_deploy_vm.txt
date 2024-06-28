@@ -16,10 +16,20 @@ create key pairs
 https://cloud.google.com/compute/docs/connect/create-ssh-keys#linux-and-macos
 
 ssh-keygen -t rsa -f ~/.ssh/vm-forensic -C olonok_gmail_com -b 2048
+ssh-keygen -t rsa -f ~/.ssh/vm-forensic-2 -C olonok_gmail_com -b 2048
+ls -l ~/.ssh
+cat ~/.ssh/vm-forensic-2.pub
+ssh -i .ssh/vm-forensic olonok_gmail_com@34.89.95.169
 access VM using ssh
-ssh -i .ssh/vm-forensic-2 olonok_gmail_com@34.147.177.174
+ssh -i .ssh/vm-forensic-2 olonok_gmail_com@35.246.23.60
 ssh -i .ssh/vm-forensic-3 olonok_gmail_com@34.105.176.33
 
 https://cloud.google.com/compute/docs/connect/add-ssh-keys#gcloud
 gcloud compute os-login ssh-keys add --key-file=\\wsl.localhost\Debian\home\olonok\.ssh\vm-forensic.pub --project=complete-tube-421007 (windows)
 gcloud compute os-login ssh-keys add --key-file=.ssh/vm-forensic.pub --project=complete-tube-421007 (linux)
+
+
+ssh -i .ssh/vm-forensic olonok_gmail_com@35.246.23.60
+ps -ef > processes.txt
+scp -i .ssh/vm-forensic ./processes.txt olonok_gmail_com@35.246.23.60:~/processes.txt
+
