@@ -1,0 +1,42 @@
+# Instructions
+- pip install huggingface_hub
+- python download.py
+- git clone https://github.com/ggerganov/llama.cpp.git
+- python -m pip install -r llama.cpp/requirements.txt --user
+- python llama.cpp/convert-hF-to-gguf-update.py token_hf
+- pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+- python llama.cpp/convert-hf-to-gguf.py models/tokenizers/phi-3/ --outfile models/ggml-vocab-phi-3.gguf --vocab-only
+
+python llama.cpp/convert-hf-to-gguf.py models/tokenizers/phi-3-128 --outfile models/ggml-vocab-phi-3-128.gguf --vocab-only
+
+## Quatization Model 
+- python llama.cpp/convert-hF-to-gguf.py phi3 --outfile Phi-3-small-4k-instruct.gguf --outtype q8_0
+
+
+
+# Models
+- "repo": "https://huggingface.co/meta-llama/Llama-2-7b-hf"
+
+- "repo": "https://huggingface.co/meta-llama/Meta-Llama-3-8B",
+
+- "repo": "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
+- "repo": "https://huggingface.co/deepseek-ai/deepseek-llm-7b-base",
+- "repo": "https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-base",
+- "repo": "https://huggingface.co/tiiuae/falcon-7b",
+- "repo": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+- "repo": "https://huggingface.co/mosaicml/mpt-7b",
+- "repo": "https://huggingface.co/bigcode/starcoder2-3b",
+- "repo": "https://huggingface.co/openai-community/gpt2",
+- "repo": "https://huggingface.co/stabilityai/stablelm-2-zephyr-1_6b",
+- "repo": "https://huggingface.co/smallcloudai/Refact-1_6-base",
+- "repo": "https://huggingface.co/CohereForAI/c4ai-command-r-v01",
+- "repo": "https://huggingface.co/Qwen/Qwen1.5-7B",
+- "repo": "https://huggingface.co/allenai/OLMo-1.7-7B-hf",
+- "repo": "https://huggingface.co/databricks/dbrx-base",
+- "repo": "https://huggingface.co/jinaai/jina-embeddings-v2-base-en",
+- "repo": "https://huggingface.co/jinaai/jina-embeddings-v2-base-es",
+- "repo": "https://huggingface.co/jinaai/jina-embeddings-v2-base-de",
+- "repo": "https://huggingface.co/abacusai/Smaug-Llama-3-70B-Instruct",
+- "repo": "https://huggingface.co/LumiOpen/Poro-34B-chat",
+- "repo": "https://huggingface.co/jinaai/jina-embeddings-v2-base-code",
+- "repo": "https://huggingface.co/LumiOpen/Viking-7B",
