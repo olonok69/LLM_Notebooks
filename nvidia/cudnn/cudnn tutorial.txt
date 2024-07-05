@@ -1,0 +1,39 @@
+#### INSTALL CUDA TOOLKIT
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+
+
+sudo apt-get update
+sudo apt-get install cuda-toolkit
+
+#### INSTALL NVIDIA CONTAINER TOOLKIT
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+
+https://docs.nvidia.com/deeplearning/cudnn/latest/installation/linux.html
+
+### INSTALL CUDNN
+sudo apt-get -y install cudnn9-cuda-12
+
+nvcc --version
+nvcc --list-gpu-code
+nvcc --list-gpu-arch
+
+### examples c++ and python
+https://github.com/nvidia/cuda-samples
+
+https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/
+
+# compile example in root
+g++ -I/usr/local/cuda/include -I/usr/local/cuda/targets/x86_64-linux/include -o test.o -c test.cpp
+
+/usr/local/cuda/bin/nvcc -ccbin g++ -m64 -gencode arch=compute_87,code=sm_87 -o hw test.o -I/usr/local/cuda/include -I/usr/local/cuda/targets/x86_64-linux/include -L/usr/local/cuda/lib64 -L/usr/local/cuda/targets/x86_64-linux/lib  -lcudnn -lstdc++ -lm
+
+
+# compile example  in fp16ScalarProduct
+
+make TARGET_ARCH=x86_64
+
+/usr/local/cuda/bin/nvcc -ccbin g++ -m64 -gencode arch=compute_87,code=sm_87 -o fp16 fp16ScalarProduct.o -I/usr/local/cuda/include -I/usr/local/cuda/targets/x86_64-linux/include -L/usr/local/cuda/lib64 -L/usr/local/cuda/targets/x86_64-linux/lib  -lcudnn -lstdc++ -lm
