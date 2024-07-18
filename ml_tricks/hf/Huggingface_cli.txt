@@ -1,0 +1,55 @@
+# Documentation
+https://huggingface.co/docs/huggingface_hub/main/en/guides/cli
+
+# install
+
+pip install --upgrade huggingface_hub
+pip install git+https://github.com/huggingface/huggingface_hub
+
+conda install -c conda-forge huggingface_hub
+
+pip install -U "huggingface_hub[cli]"
+
+python -c "from huggingface_hub import model_info; print(model_info('gpt2'))"
+
+# Login
+huggingface-cli login --token $HF_TOKEN --add-to-git-credential
+huggingface-cli login --token %HF_TOKEN% --add-to-git-credential
+
+# HF env
+huggingface-cli  env
+
+# Download files
+huggingface-cli download gpt2 config.json
+huggingface-cli download openai-community/gpt2
+
+huggingface-cli download microsoft/Florence-2-base  --local-dir .
+huggingface-cli download adept/fuyu-8b model-00001-of-00002.safetensors --local-dir fuyu
+
+# Specify cache
+huggingface-cli download adept/fuyu-8b --cache-dir ./path/to/cache
+
+# Upload 
+huggingface-cli upload --repo-type model olonok/test ./config.json
+
+# cache 
+huggingface-cli scan-cache
+
+huggingface-cli delete-cache
+
+huggingface-cli delete-cache --disable-tui
+
+https://huggingface.co/docs/huggingface_hub/guides/download
+
+
+# Donwload Timeout
+
+export HF_HUB_DOWNLOAD_TIMEOUT=30
+
+
+
+Specify cache directory
+
+huggingface-cli download adept/fuyu-8b --cache-dir ./path/to/cache
+
+
