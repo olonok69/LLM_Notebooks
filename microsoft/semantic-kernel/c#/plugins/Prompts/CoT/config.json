@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Chain of Thougth Instruction",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 1000,
+      "temperature": 0.1
+    }
+  },
+  "input_variables": [
+    {
+      "name": "cotinstruction",
+      "description": "CoT Instructions",
+      "required": true
+    }
+  ]
+}

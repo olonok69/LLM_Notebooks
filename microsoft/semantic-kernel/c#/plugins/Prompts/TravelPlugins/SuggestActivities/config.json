@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Recommend activities at a travel destination to the user",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 4000,
+      "temperature": 0.3
+    }
+  },
+  "input_variables": [
+    {
+      "name": "history",
+      "description": "Background information about the user",
+      "required": true
+    },
+    {
+      "name": "destination",
+      "description": "The user's travel destination",
+      "required": true
+    }
+  ]
+}

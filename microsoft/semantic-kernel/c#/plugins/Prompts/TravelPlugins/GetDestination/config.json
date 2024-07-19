@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Identify the destination of the user's travel plans",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 1200,
+      "temperature": 0
+    }
+  },
+  "input_variables": [
+    {
+      "name": "input",
+      "description": "Text from the user that contains their travel destination",
+      "required": true
+    }
+  ]
+}

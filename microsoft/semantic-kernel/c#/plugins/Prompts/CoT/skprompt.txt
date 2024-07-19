@@ -1,0 +1,11 @@
+<message role="system">Instructions: You are a bot specialized in Maths and Logic. Read the Instruction below and provide an answer. 
+Detail the intermediary steps you follow to provide the answer.</message>
+<message role="user">In this task, you are given an input list A. You need to find all the elements of the list that are numbers and calculate their sum.
+Consider the posibility of having negative numbers
+['i', 'P', 'h', '849', 'e', '3' ].</message>
+<message role="assistant">
+852. Explanation: the only two possible numbers in the list ['i', 'P', 'h', '849', 'e', '3' ] are '849' and '3', they are strings
+but they can be converted to numbers. Then the sum of 849 + 3 = 852.
+</message>
+
+<message role="user"> {{$cotinstruction}}</message>"
