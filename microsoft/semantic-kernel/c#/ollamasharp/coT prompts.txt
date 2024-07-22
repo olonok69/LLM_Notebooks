@@ -1,0 +1,9 @@
+ollamasharp.exe "In this task, you are given an input list A. You need to find all the elements of the list that are numbers and calculate their sum.\n['i', 'P', 'h', '849', 'e']"
+
+ollamasharp.exe "Question: I went to the market and bought 10 apples.\n I gave 2 apples to the neighbor and 2 to the repairman. Then I went again and bought 5 more apples and I ate 1 apple.\nAnswer: How many apples did I remain with?\n"
+
+ollamasharp.exe "When I was 6, my sister was half of my age. Now I’m 70 years old.\nAnswer how old is my sister now?\n"
+
+ollamasharp.exe "Question: I had a car 20 years ago and at that time I was 37. Answer: How old I am now?"
+
+ollamasharp.exe "Question: \nI had a car 20 years ago, and its cost was 100000$.\nCar's anual depreciation it is 5%.\nUsing the Percentage (Declining Balance) method, what it is the value of the car now ?"

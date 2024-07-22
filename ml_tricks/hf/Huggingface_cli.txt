@@ -1,5 +1,7 @@
 # Documentation
 https://huggingface.co/docs/huggingface_hub/main/en/guides/cli
+https://huggingface.co/docs/huggingface_hub/installation
+
 
 # install
 
