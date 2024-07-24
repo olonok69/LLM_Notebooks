@@ -1,0 +1,47 @@
+[
+  {
+    "title": "you are not the only one",
+    "artist": "Evanescence",
+    "genre": "Techno, glam, rock"
+  },
+  {
+    "title": "you are not the only one",
+    "artist": "Evanescence",
+    "genre": "Techno, glam, rock"
+  },
+  {
+    "title": "Bring me to life",
+    "artist": "Evanescence",
+    "genre": "Techno, glam, rock"
+  },
+  {
+    "title": "Enjoy the silent",
+    "artist": "Depeche Model",
+    "genre": "Techno, glam, rock"
+  },
+  {
+    "title": "Danse",
+    "artist": "Tiara",
+    "genre": "French pop, electropop, pop"
+  },
+  {
+    "title": "Loanh Quanh",
+    "artist": "Ly Hoa",
+    "genre": "indie, folk"
+  },
+  {
+    "title": "Kalam Eineh",
+    "artist": "Yasemin",
+    "genre": "pop, Egyptian pop"
+  },
+  {
+    "title": "I Miss You",
+    "artist": "Chishin",
+    "genre": "hiphop, rap"
+  },
+  {
+    "title": "4EVER",
+    "artist": "Gaby",
+    "genre": "alternative, indie"
+  }
+]
