@@ -1,0 +1,8 @@
+Based on the user's recently played songs:
+{{$recentlyPlayedSongs}}
+
+And a list of upcoming concerts:
+{{$upcomingConcerts}}
+
+Suggest an upcoming concert. The user lives in {{$location}}, 
+please recommend a relevant concert that is close to their location.

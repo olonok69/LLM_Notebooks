@@ -1,0 +1,15 @@
+[
+    { title: "See Tinh", artist: "Hoang Thuy Linh", genre: "pop, Vietnamese pop" },
+    { title: "Luv(sic)", artist: "Nujabes", genre: "hiphop, rap, Japanese hiphop" },
+    { title: "Kids", artist: "MGMT", genre: "synthpop, alternative, indie" },
+    { title: "Ana Negm", artist: "Cairokee", genre: "pop, arabic hiphop, Egyptian rap" },
+    { title: "Single Ladies", artist: "Beyonce", genre: "pop, r&b" },
+    { title: "Oblivion", artist: "Grimes", genre: "alternative, indie, electropop" },
+    { title: "1901", artist: "Phoenix", genre: "synthpop, alternative, indie" },
+    { title: "Suisei", artist: "Daoko", genre: "pop, Japanese pop" },
+    { title: "Sabry Aalil", artist: "Sherine", genre: "pop, Egyptian pop" },
+    { title: "From Eden", artist: "Hozier", genre: "blues, soul, electropop" },
+    { title: "Sofia", artist: "Clairo", genre: "alternative, indie, pop" },
+    { title: "Strawberry Blond", artist: "Mitski", genre: "Indie, Alternative, Folk"},
+    { title: "July", artist: "Kina Grannis", genre: "indie, folk" }
+]

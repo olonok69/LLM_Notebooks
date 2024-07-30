@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Loanh Quanh",
+    "artist": "Mademoiselle",
+    "genre": "indie, folk"
+  },
+  {
+    "title": "Kalam Eineh",
+    "artist": "Sherine",
+    "genre": "pop, Egyptian pop"
+  },
+  {
+    "title": "I Miss You",
+    "artist": "Shing02",
+    "genre": "hiphop, rap"
+  },
+  {
+    "title": "4EVER",
+    "artist": "Clairo",
+    "genre": "alternative, indie"
+  }
+]

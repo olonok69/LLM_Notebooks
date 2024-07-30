@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Suggest a concert to the user",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 4000,
+      "temperature": 0
+    }
+  },
+  "input_variables": [
+    {
+      "name": "upcomingConcerts",
+      "description": "A list of artist's upcoming concerts",
+      "required": true
+    },
+    {
+      "name": "recentlyPlayedSongs",
+      "description": "A list of songs recently played by the user",
+      "required": true
+    },
+    {
+      "name": "location",
+      "description": "The user's location",
+      "required": true
+    }
+  ]
+}
