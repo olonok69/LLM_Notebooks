@@ -1,0 +1,23 @@
+Pillow
+gunicorn
+fastapi>=0.61.1
+uvicorn>=0.11.8
+python-multipart
+requests>=2.24.0
+open_clip_torch
+python-dotenv==1.0.0
+transformers >= 4.22.1
+sentencepiece >= 0.1.94
+datasets >= 1.0.2
+sentence-transformers
+gdown>=4.7.0
+matplotlib
+tqdm
+opencv-python==4.7.0.72
+pillow>=8.2.0
+detectaicore
+orjson
+torch
+numpy
+pillow
+onnxruntime
