@@ -1,0 +1,212 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  - develop
+
+resources:
+  - repo: self
+
+variables:
+  # agents
+  azure_build_Agent: "Azure Pipelines"
+
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 
+  imageRepository: 
+  containerRegistry: 
+  tag: "$(Build.BuildId)"
+
+  # docker file paths
+  dockerfilePath_classification: "$(Build.SourcesDirectory)/classification/Dockerfile"
+  dockerfilePath_classification_en: "$(Build.SourcesDirectory)/classification/Dockerfile_en"
+  dockerfilePath_classification_es: "$(Build.SourcesDirectory)/classification/Dockerfile_es"
+  dockerfilePath_classification_it: "$(Build.SourcesDirectory)/classification/Dockerfile_it"
+  dockerfilePath_classification_de: "$(Build.SourcesDirectory)/classification/Dockerfile_de"
+  # image Repositories
+  imageRepository_classification: "$(imageRepository)-classification"
+  imageRepository_classification_en: "$(imageRepository)-classification-en"
+  imageRepository_classification_es: "$(imageRepository)-classification-es"
+  imageRepository_classification_it: "$(imageRepository)-classification-it"
+  imageRepository_classification_de: "$(imageRepository)-classification-de"      
+
+  # Build Variables
+  disable_tests: "true" # Set to 'true' to skip the unit tests
+  use_no_cache: "false" # Set to 'true' to enable --no-cache which will build the docker images without cache
+
+  # Sonar Cloud
+  SonarCloud_Organization: 
+  SonarCloud_ProjectName: "Detect-AI-PII-Classifier"
+  SonarCloud_ProjectKey: "sceven_Detect-AI-PII-Classifier"
+
+stages:
+  - stage: Publish_Docker_Artifacts
+    displayName: Sonar Analyze + Publish Artifacts
+    jobs:
+      - job: Publish_Docker_Artifacts
+        displayName: Publish Docker Artifacts
+        pool: $(azure_build_Agent)
+        steps:
+          - checkout: self
+            fetchDepth: 0
+
+          - task: SonarCloudPrepare@1
+            continueOnError: false
+            inputs:
+              SonarCloud: 'SonarCloud'
+              organization: '$(SonarCloud_Organization)'
+              scannerMode: 'CLI'
+              configMode: 'file'
+              extraProperties: |
+                sonar.projectKey=$(SonarCloud_ProjectKey)
+                sonar.organization=$(SonarCloud_Organization)
+                
+                # This is the name and version displayed in the SonarCloud UI.
+                #sonar.projectName=Detect-AI
+                #sonar.projectVersion=1.0
+                
+                
+                # Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
+                #sonar.sources=.
+                
+                # Encoding of the source code. Default is default system encoding
+                #sonar.sourceEncoding=UTF-8
+              
+          - task: SonarCloudAnalyze@1
+            continueOnError: false
+
+          - task: SonarCloudPublish@1
+            continueOnError: false
+            inputs:
+              pollingTimeoutSec: '300'
+
+          - task: PublishBuildArtifacts@1
+            displayName: Publish the bundle
+            inputs:
+              PathtoPublish: "$(System.DefaultWorkingDirectory)/docker"
+              ArtifactName: "docker"
+              publishLocation: "Container"
+
+  # - stage: Python_Integration_Tests
+  #   displayName: Test Stage
+  #   condition: eq(variables['disable_tests'], 'false')
+  #   jobs:
+  #     - job: RunUnitTests
+  #       displayName: Run Python Unit Tests
+  #       pool: $(azure_build_Agent)
+  #       steps:
+  #         - checkout: self
+  #         - task: UsePythonVersion@0
+  #           inputs:
+  #             versionSpec: "3.10.x"
+  #             addToPath: true
+  #         - script: |
+  #             pip install --upgrade pip
+  #             pip install --no-cache-dir -r $(Build.SourcesDirectory)/tests/requirements.txt 
+  #             python -m spacy download en_core_web_lg
+  #             python -m spacy download xx_ent_wiki_sm
+  #           displayName: Install Dependencies
+  #         - script: |
+  #             python -m pytest tests
+  #           displayName: Run Unit Tests
+
+  - stage: Docker_Classification_en
+    displayName: Docker Classification English
+    jobs:
+      - job: Docker_Image_Builds_Classification_en
+        displayName: Build and Push Docker Classification English
+        pool: $(azure_build_Agent)
+        steps:
+          - task: Docker@2
+            displayName: Build and Push
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository_classification_en)
+              dockerfile: $(dockerfilePath_classification_en)
+              buildArguments: $[format('--no-cache={0}', variables['use_no_cache'])]
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+                latest
+    dependsOn: Publish_Docker_Artifacts
+
+  - stage: Docker_Classification
+    displayName: Docker Classification
+    jobs:
+      - job: Docker_Image_Builds_Classification
+        displayName: Build and Push Docker Classification
+        pool: $(azure_build_Agent)
+        steps:
+          - task: Docker@2
+            displayName: Build and Push
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository_classification)
+              dockerfile: $(dockerfilePath_classification)
+              buildArguments: $[format('--no-cache={0}', variables['use_no_cache'])]
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+                latest
+    dependsOn: Publish_Docker_Artifacts
+
+  - stage: Docker_Classification_es
+    displayName: Docker Classification Spanish
+    jobs:
+      - job: Docker_Image_Builds_Classification_es
+        displayName: Build and Push Docker Classification Spanish
+        pool: $(azure_build_Agent)
+        steps:
+          - task: Docker@2
+            displayName: Build and Push
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository_classification_es)
+              dockerfile: $(dockerfilePath_classification_es)
+              buildArguments: $[format('--no-cache={0}', variables['use_no_cache'])]
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+                latest
+    dependsOn: Publish_Docker_Artifacts
+
+  - stage: Docker_Classification_it
+    displayName: Docker Classification Italian
+    jobs:
+      - job: Docker_Image_Builds_Classification_it
+        displayName: Build and Push Docker Classification Italian
+        pool: $(azure_build_Agent)
+        steps:
+          - task: Docker@2
+            displayName: Build and Push
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository_classification_it)
+              dockerfile: $(dockerfilePath_classification_it)
+              buildArguments: $[format('--no-cache={0}', variables['use_no_cache'])]
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+                latest
+    dependsOn: Publish_Docker_Artifacts
+
+  - stage: Docker_Classification_de
+    displayName: Docker Classification German
+    jobs:
+      - job: Docker_Image_Builds_Classification_de
+        displayName: Build and Push Docker Classification German
+        pool: $(azure_build_Agent)
+        steps:
+          - task: Docker@2
+            displayName: Build and Push
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository_classification_de)
+              dockerfile: $(dockerfilePath_classification_de)
+              buildArguments: $[format('--no-cache={0}', variables['use_no_cache'])]
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+                latest
+    dependsOn: Publish_Docker_Artifacts

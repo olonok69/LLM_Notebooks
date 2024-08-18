@@ -1,0 +1,69 @@
+name: detect-ai
+channels:
+  - anaconda
+  - pytorch
+  - "nvidia/label/cuda-12.0.0"
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.11
+  - cuda-toolkit
+  - pip
+  - jupyter
+  - pip:
+    - Cython>=0.29.33
+    - h5py>=3.1.0
+    - imageio>=2.9.0
+    - imagesize>=1.4.1
+    - imutils>=0.5.4
+    - joblib>=1.2.0
+    - kiwisolver>=1.4.4
+    - lxml>=4.9.2
+    - numpy>=1.22.4
+    - orjson >=3.8.1
+    - packaging>=23.0
+    - pandas>=1.3.5
+    - parso>=0.8.3
+    - pip>=22.0.4
+    - python-dateutil>=2.8.2
+    - python-louvain>=0.16
+    - python-slugify>=8.0.1
+    - python-utils>=3.5.2
+    - PyYAML>=6.0
+    - requests>=2.25.1
+    - scikit-learn>=1.0.2
+    - scipy>=1.7.3
+    - sklearn-pandas>=1.8.0
+    - fastapi>=0.68.0
+    - pydantic>=1.8.0
+    - uvicorn>=0.15.0
+    - tornado>=6.2
+    - zict>=2.2.0
+    - zipp>=3.15.0
+    - langdetect>=1.0.8
+    - beautifulsoup4>=4.11.1
+    - python-dotenv==1.0.0
+    - pytorch-lightning > 1.5.0
+    - torch >= 1.10.0
+    - transformers >= 4.22.1
+    - sentencepiece >= 0.1.94
+    - datasets >= 1.0.2
+    - thefuzz[speedup]
+    - sentence-transformers
+    - inscriptis==2.3.2
+    - keybert
+    - aiofiles
+    - aiohttp[speedups]
+    - spacy
+    - xformers
+    - sacremoses
+    - dl-translate
+    - coverage
+    - codecov>=2.1
+    - pytest>=3.0.5
+    - pytest-cov
+    - pytest-flake8
+    - flake8
+    - check-manifest
+    - twine==1.13.0

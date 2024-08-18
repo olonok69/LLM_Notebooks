@@ -1,0 +1,77 @@
+version: "3.7"
+
+services:
+  classification:
+    container_name: classification
+    image: classification:latest
+    hostname: frontend
+    environment:
+      - LANGUAGE_ENGINE=en
+      - PORT=5000
+      - DOCKER=YES
+      - FRONT=YES
+    ports:
+      - 5000:5000
+    restart: always
+    networks:
+      - network
+
+  classification_en:
+    hostname: classification_en
+    container_name: classification_en
+    image: classification_en:latest
+    environment:
+      - LANGUAGE_ENGINE=en
+      - PORT=5100
+      - DOCKER=YES
+    ports:
+      - 5100:5100
+    restart: always
+    networks:
+      - network
+
+  classification_es:
+    hostname: classification_es
+    container_name: classification_es
+    image: classification_es:latest
+    environment:
+      - LANGUAGE_ENGINE=es
+      - PORT=5101
+      - DOCKER=YES
+    ports:
+      - 5101:5101
+    restart: always
+    networks:
+      - network
+
+  classification_it:
+    hostname: classification_it
+    container_name: classification_it
+    image: classification_it:latest
+    environment:
+      - LANGUAGE_ENGINE=it
+      - PORT=5102
+      - DOCKER=YES
+    ports:
+      - 5102:5102
+    restart: always
+    networks:
+      - network
+
+  classification_de:
+    hostname: classification_de
+    container_name: classification_de
+    image: classification_de:latest
+    environment:
+      - LANGUAGE_ENGINE=de
+      - PORT=5103
+      - DOCKER=YES
+    ports:
+      - 5103:5103
+    restart: always
+    networks:
+      - network
+
+
+networks:
+  network:
