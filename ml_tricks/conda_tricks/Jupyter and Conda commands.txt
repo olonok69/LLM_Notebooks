@@ -1,0 +1,23 @@
+# Create and remove Jupyter Kernels (Needs ipykernel installed)
+=================================================================
+-create
+python -m ipykernel install --user --name remove --display-name "Python (remove)"
+-list
+jupyter kernelspec list
+- remove
+jupyter kernelspec  remove remove
+
+
+Anaconda Duplicate Environment
+===================================
+conda list --explicit > spec-file.txt
+conda create --name myenv --file spec-file.txt
+existing env 
+conda install --name myenv --file spec-file.txt
+
+
+Anaconda Remove unused packages and caches.
+===========================================
+conda clean --help
+dryrun: conda clean -d -v --all --json
+borrado : conda clean [-a , -i, p,-t,-l] -v --json
