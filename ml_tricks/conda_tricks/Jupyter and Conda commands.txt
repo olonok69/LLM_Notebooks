@@ -8,13 +8,16 @@ jupyter kernelspec list
 jupyter kernelspec  remove remove
 
 
-Anaconda Duplicate Environment
+Anaconda Building identical conda environments
 ===================================
+==== export packages to txt ====
 conda list --explicit > spec-file.txt
-conda create --name myenv --file spec-file.txt
-existing env 
+more spec-file.txt
+==new env ==
+conda create --name remove_copy --file spec-file.txt 
+== existing env ===
 conda install --name myenv --file spec-file.txt
-
+conda list --explicit > spec-file-2.txt
 
 Anaconda Remove unused packages and caches.
 ===========================================
