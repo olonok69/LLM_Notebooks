@@ -24,3 +24,23 @@ Anaconda Remove unused packages and caches.
 conda clean --help
 dryrun: conda clean -d -v --all --json
 borrado : conda clean [-a , -i, p,-t,-l] -v --json
+
+
+Exporting the environment.yml file
+==================================
+
+conda env export > environment.yml
+
+conda env create -f environment.yml
+
+conda env export > environment2.yml
+diff environment.yml environment2.yml
+
+Restoring an environment
+========================
+
+conda list --revisions
+conda install --revision=REVNUM
+conda install --rev REVNUM
+
+
