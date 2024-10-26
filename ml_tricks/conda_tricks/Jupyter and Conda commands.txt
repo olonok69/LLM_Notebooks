@@ -1,7 +1,8 @@
 # Create and remove Jupyter Kernels (Needs ipykernel installed)
 =================================================================
+conda install ipykernel
 -create
-python -m ipykernel install --user --name remove --display-name "Python (remove)"
+python -m ipykernel install --user --name llamaindex --display-name "Python (llamaindex)"
 -list
 jupyter kernelspec list
 - remove
@@ -41,6 +42,6 @@ Restoring an environment
 
 conda list --revisions
 conda install --revision=REVNUM
-conda install --rev REVNUM
+conda install --rev 3
 
 
