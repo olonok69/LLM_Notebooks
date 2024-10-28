@@ -1,0 +1,9 @@
+jupyter
+jupyterlab
+langchain
+langchain-community
+langchain-nvidia-ai-endpoints
+markdownify
+pymilvus
+sentence-transformers
+langchain_milvus
