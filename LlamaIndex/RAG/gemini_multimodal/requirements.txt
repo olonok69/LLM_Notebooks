@@ -1,0 +1,10 @@
+llama-index-multi-modal-llms-gemini
+llama-index-vector-stores-qdrant
+llama-index-embeddings-gemini
+llama-index-llms-gemini
+llama-index==0.11.15
+llama-index-readers-file
+google-generativeai>=0.3.0 
+matplotlib 
+qdrant_client
+python-dotenv
