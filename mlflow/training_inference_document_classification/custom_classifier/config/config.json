@@ -1,0 +1,15 @@
+{
+    "MODEL_NAME": "T5-Custom-Classifier",
+    "MLFLOW_URI" : "http://mlflow_tracker:5000",
+    "EXPERIMENT_NAME": "Custom_Classifier",
+    "CLASSIFIER_TYPE" : "text-classifier",
+    "MODEL_ID" : "google/flan-t5-base",
+    "HOST": "mysql",
+    "USER_DB": "mlflow_user1",
+    "PORT": 3307,
+    "DB" : "mlflow_db",
+    "SIZE_TRAIN" : 75,
+    "MIN_SIZE_LABEL":75,
+    "DEVICE":"cpu"
+
+}

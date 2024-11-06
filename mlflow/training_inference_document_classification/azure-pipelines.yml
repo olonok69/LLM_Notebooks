@@ -1,0 +1,131 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  - develop
+
+resources:
+  - repo: self
+
+variables:
+
+  # agents
+  azure_build_Agent: "Azure Pipelines"
+  hosted_build_Agent: "Default"
+
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: "b55a1ff0-774c-4842-8247-0fd90877ac37"
+  imageRepository: "detectai"
+  containerRegistry: "acrdetectaideveastus.azurecr.io"
+  tag: "$(Build.BuildId)"
+
+  # docker file paths
+  dockerfilePath_custom_classifier: "$(Build.SourcesDirectory)/custom_classifier/Dockerfile"
+  dockerfilePath_mlflow: "$(Build.SourcesDirectory)/mlflow/Dockerfile"
+
+  # image Repositories
+  imageRepository_custom_classifier: "$(imageRepository)-custom_classifier"
+  imageRepository_mlflow: "$(imageRepository)-mlflow"
+
+  # Build Variables
+  disable_tests: "false" # Set to 'true' to skip the unit tests
+  use_no_cache: "false" # Set to 'true' to enable --no-cache which will build the docker images without cache
+
+  # Sonar Cloud
+  SonarCloud_Organization: "a5g3uqpot1ph"
+  SonarCloud_ProjectName: "Detect-AI-Custom-Classifier"
+  SonarCloud_ProjectKey: "sceven_Detect-AI-Custom-Classifier"
+
+  mlflow_user: "customclassifier"
+
+stages:
+  - stage: Publish_Docker_Artifacts
+    displayName: Sonar Analyze + Publish Artifacts
+    jobs:
+      - job: Publish_Docker_Artifacts
+        displayName: Publish Docker Artifacts
+        pool: $(azure_build_Agent)
+        steps:
+          - checkout: self
+            fetchDepth: 0
+
+          - task: SonarCloudPrepare@1
+            continueOnError: false
+            inputs:
+              SonarCloud: 'SonarCloud'
+              organization: '$(SonarCloud_Organization)'
+              scannerMode: 'CLI'
+              configMode: 'file'
+              extraProperties: |
+                sonar.projectKey=$(SonarCloud_ProjectKey)
+                sonar.organization=$(SonarCloud_Organization)
+                
+                # This is the name and version displayed in the SonarCloud UI.
+                #sonar.projectName=Detect-AI-Custom-Classifier
+                #sonar.projectVersion=1.0
+
+
+                # Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
+                #sonar.sources=.
+
+                # Encoding of the source code. Default is default system encoding
+                #sonar.sourceEncoding=UTF-8
+              
+          - task: SonarCloudAnalyze@1
+            continueOnError: false
+
+          - task: SonarCloudPublish@1
+            continueOnError: false
+            inputs:
+              pollingTimeoutSec: '300'
+
+          - task: PublishBuildArtifacts@1
+            displayName: Publish the Artifact Bundle
+            inputs:
+              PathtoPublish: "$(System.DefaultWorkingDirectory)/docker"
+              ArtifactName: "docker"
+              publishLocation: "Container"              
+
+  - stage: Docker_mlflow_tracker
+    displayName: Docker mlflow tracker
+    jobs:
+      - job: Docker_Image_Builds_mlflow_tracker
+        steps:
+        - script: |
+            docker build \
+              --file $(dockerfilePath_mlflow) \
+              --build-arg mlflow_user=$(mlflow_user) \
+              -t acrdetectaideveastus.azurecr.io/$(imageRepository_mlflow):$(tag) \
+              -t acrdetectaideveastus.azurecr.io/$(imageRepository_mlflow):latest .
+          displayName: 'Build Docker_mlflow_tracker with build args'
+
+        - task: Docker@2
+          displayName: Push Docker Mlflow Tracker
+          condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+          inputs:
+            command: 'push'          
+            repository: $(imageRepository_mlflow)            
+            containerRegistry: $(dockerRegistryServiceConnection)
+            tags: |
+              $(tag)
+              latest    
+
+  - stage: Docker_custom_classifier
+    displayName: Docker Custom Classifier
+    jobs:
+      - job: Docker_Image_Builds_Custom_Classifier
+        displayName: Build and Push Docker Custom Classifier
+        pool: $(azure_build_Agent)
+        steps:
+          - task: Docker@2
+            displayName: Build and Push
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository_custom_classifier)
+              dockerfile: $(dockerfilePath_custom_classifier)
+              buildArguments: $[format('--no-cache={0}', variables['use_no_cache'])]
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+                latest            
