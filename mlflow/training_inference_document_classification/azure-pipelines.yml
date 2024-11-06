@@ -15,9 +15,9 @@ variables:
   hosted_build_Agent: "Default"
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: "b55a1ff0-774c-4842-8247-0fd90877ac37"
-  imageRepository: "detectai"
-  containerRegistry: "acrdetectaideveastus.azurecr.io"
+  dockerRegistryServiceConnection: ""
+  imageRepository: ""
+  containerRegistry: ".azurecr.io"
   tag: "$(Build.BuildId)"
 
   # docker file paths
@@ -33,9 +33,9 @@ variables:
   use_no_cache: "false" # Set to 'true' to enable --no-cache which will build the docker images without cache
 
   # Sonar Cloud
-  SonarCloud_Organization: "a5g3uqpot1ph"
-  SonarCloud_ProjectName: "Detect-AI-Custom-Classifier"
-  SonarCloud_ProjectKey: "sceven_Detect-AI-Custom-Classifier"
+  SonarCloud_Organization: ""
+  SonarCloud_ProjectName: "Custom-Classifier"
+  SonarCloud_ProjectKey: ""
 
   mlflow_user: "customclassifier"
 
