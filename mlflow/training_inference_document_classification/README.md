@@ -1,4 +1,4 @@
-# DETECT-AI CUSTOM CLASSIFIER
+# CUSTOM CLASSIFIER
 
 # Introduction 
 This repository contains the Custom-Classifier components. The Custom-Classifier it is an application which allow the customer create a classifier using their own data and labels. User have to provide a set of documents organized in folders. Each folder represent a class or label and the folder contains a minumum of 100 documents which represent the class/label. Provide a correct set of documents organized correctly and a minimum size per class/label it is a responsability of the user. With this set of document we will fine tune a LLM on the task classification and if the classifier meet the evaluation criteria, it will be saved on the MLFLOW model repository of that user to later be use for inference. One you have 1 classifier or multiple classifier you can decide to classify a document using the specific set of labels that were use during the fine tuning. The minimum number of classes/labels is two.
