@@ -31,6 +31,8 @@ Also, if you are don’t find something, let me know in a comment in YouTube and
 - ML Tricks
 - Shorts and Shorts2
 - Langchain
+- LlamaIndex
+- RAG Retrieval Augmented Generation
 - Neo4J Data Science
 - ML and MLOPS Databricks
 - Raspberry Pi 
