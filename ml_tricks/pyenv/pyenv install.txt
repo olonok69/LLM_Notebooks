@@ -1,0 +1,57 @@
+PYENV
+https://github.com/pyenv/pyenv
+
+
+pyenv is a wonderful tool for managing multiple Python versions. 
+Even if you already have Python installed on your system, it is worth having pyenv installed so 
+that you can easily try out new language features or help contribute to a project that is on a 
+different version of Python. Using pyenv is also a great way to install pre-release versions of 
+Python so that you can test them for bugs.
+
+###### INSTALL####
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
+	libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev \
+	liblzma-dev python3-openssl
+	
+	
+curl https://pyenv.run | bash
+
+
+
+This will install pyenv along with a few plugins that are useful:
+
+pyenv: The actual pyenv application
+pyenv-virtualenv: Plugin for pyenv and virtual environments
+pyenv-update: Plugin for updating pyenv
+pyenv-doctor: Plugin to verify that pyenv and build dependencies are installed
+pyenv-which-ext: Plugin to automatically lookup system commands
+
+
+to your .bashrc
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+run source  .bashrc
+
+#### List versions
+pyenv install --list | grep " 3\.[16789]"
+
+#### Install
+pyenv install -v 3.11.10
+
+pyenv install -v 3.10.16
+
+
+### versions
+pyenv versions
+pyenv global 3.11.10
+pyenv local 3.11.10
+pyenv which pip
+
+### python environtment
+pyenv virtualenv 3.11.10 p31110
+pyenv virtualenv 3.10.16 p31016
+
+
+pyenv --help
