@@ -16,6 +16,7 @@
  * 
  * build app in LInux
  * dotnet new create console -n lang_detector
+ *   cd lang_detector
  *  dotnet add package Panlingo.LanguageIdentification.FastText
  *  dotnet add package  Mosaik.Core --version 24.8.51117
  *  dotnet run
@@ -30,7 +31,7 @@ class Program
     static void Main()
     {
         using var fastText = new FastTextDetector();
-        fastText.LoadModel("/mnt/d/repos2/c#/lang_detector/fasttext/lang_detector/models/fasttext217.bin");
+        fastText.LoadModel("/home/olonok/lang_detector/fasttext/lang_detector/models/fasttext217.bin");
         foreach (var (lang, texto) in Data.ShortSamples)
         {
             var predictions = fastText.Predict(

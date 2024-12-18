@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "rD3MEA/32Ss=",
+  "success": true,
+  "projectFilePath": "D:\\repos2\\LLM_Notebooks\\nlp\\language_detection\\csharp\\fasttext\\lang_detector\\lang_detector.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\messagepack\\2.5.172\\messagepack.2.5.172.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\messagepack.annotations\\2.5.172\\messagepack.annotations.2.5.172.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.1.1\\microsoft.extensions.logging.abstractions.2.1.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.net.stringtools\\17.6.3\\microsoft.net.stringtools.17.6.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\mosaik.core\\24.8.51117\\mosaik.core.24.8.51117.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.asyncex\\5.1.2\\nito.asyncex.5.1.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.asyncex.context\\5.1.2\\nito.asyncex.context.5.1.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.asyncex.coordination\\5.1.2\\nito.asyncex.coordination.5.1.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.asyncex.interop.waithandles\\5.1.2\\nito.asyncex.interop.waithandles.5.1.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.asyncex.oop\\5.1.2\\nito.asyncex.oop.5.1.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.asyncex.tasks\\5.1.2\\nito.asyncex.tasks.5.1.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.cancellation\\1.1.2\\nito.cancellation.1.1.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.collections.deque\\1.1.1\\nito.collections.deque.1.1.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\nito.disposables\\2.2.1\\nito.disposables.2.2.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\panlingo.languageidentification.fasttext\\0.0.0.18\\panlingo.languageidentification.fasttext.0.0.0.18.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\panlingo.languageidentification.fasttext.native\\0.0.0.18\\panlingo.languageidentification.fasttext.native.0.0.0.18.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
