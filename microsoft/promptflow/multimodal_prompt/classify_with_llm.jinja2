@@ -1,0 +1,20 @@
+# system:
+Your task is to classify a given  image  into one of the following categories:
+fax, invoice, check or other based on the image content. you need to be completelly sure if not category other should be selected.
+
+# user:
+The selection range of the value of "category" must be within "fax", "invoice", "check", "other".
+
+Here are a few examples:
+{% for ex in examples %}
+
+Image : {{ex.image}}
+OUTPUT:
+{"category": "{{ex.category}}"}
+
+{% endfor %}
+
+For a given image, classify the image according to the 4 categories:
+path: {{path}}
+image: {{image}}.
+OUTPUT:

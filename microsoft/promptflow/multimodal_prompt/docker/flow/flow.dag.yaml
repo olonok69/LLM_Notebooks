@@ -1,0 +1,66 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  path:
+    type: string
+    default: ./input/w2.tif
+  config:
+    type: object
+    default:
+      EMBEDDING_MODEL_DEPLOYMENT_NAME: text-embedding-ada-002
+      CHAT_MODEL_DEPLOYMENT_NAME: gpt-4o-chat
+      OPENAI_API_VERSION: 2024-05-01-preview
+      PROMPT_TOKEN_LIMIT: 3000
+      MAX_COMPLETION_TOKENS: 1024
+      VERBOSE: true
+      CHUNK_SIZE: 1024
+      CHUNK_OVERLAP: 64
+outputs:
+  category:
+    type: string
+    reference: ${convert_to_dict.output.category}
+nodes:
+- name: setup_env
+  type: python
+  source:
+    type: code
+    path: setup_env.py
+  inputs:
+    connection: open_ai_connection
+    config: ${inputs.config}
+- name: get_image_analyze
+  type: python
+  source:
+    type: code
+    path: get_image_analyze.py
+  inputs:
+    path: ${inputs.path}
+- name: get_examples
+  type: python
+  source:
+    type: code
+    path: get_examples.py
+  inputs: {}
+- name: classify_with_llm
+  type: llm
+  source:
+    type: code
+    path: classify_with_llm.jinja2
+  inputs:
+    deployment_name: gpt-4o-chat
+    model: gpt-4o
+    max_tokens: 1024
+    temperature: 0.2
+    examples: ${get_examples.output}
+    image: ${get_image_analyze.output.image}
+    path: ${get_image_analyze.output.path}
+  connection: open_ai_connection
+  api: chat
+- name: convert_to_dict
+  type: python
+  source:
+    type: code
+    path: convert_to_dict.py
+  inputs:
+    input_str: ${classify_with_llm.output}
