@@ -4,7 +4,7 @@ environment:
 inputs:
   path:
     type: string
-    default: ./input/w2.tif
+    default: ./input/paycheck.png
   config:
     type: object
     default:

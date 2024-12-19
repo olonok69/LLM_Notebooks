@@ -1,6 +1,7 @@
 # system:
 Your task is to classify a given  image  into one of the following categories:
-fax, invoice, check or other based on the image content. you need to be completelly sure if not category other should be selected.
+fax, invoice, check and other based on the image content. You need to be sure of the category selected based in the tike of content and main keywords.
+we will pass you examples of the text in the image and you need to classify the image based on the text in the image. for the category other you will not receive and examples
 
 # user:
 The selection range of the value of "category" must be within "fax", "invoice", "check", "other".
@@ -8,7 +9,7 @@ The selection range of the value of "category" must be within "fax", "invoice", 
 Here are a few examples:
 {% for ex in examples %}
 
-Image : {{ex.image}}
+text_image : {{ex.image}}
 OUTPUT:
 {"category": "{{ex.category}}"}
 
