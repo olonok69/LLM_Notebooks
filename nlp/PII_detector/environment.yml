@@ -1,4 +1,4 @@
-name: detect-ai
+name: project-ai
 channels:
   - anaconda
   - pytorch

@@ -37,8 +37,8 @@ variables:
 
   # Sonar Cloud
   SonarCloud_Organization: 
-  SonarCloud_ProjectName: "Detect-AI-PII-Classifier"
-  SonarCloud_ProjectKey: "sceven_Detect-AI-PII-Classifier"
+  SonarCloud_ProjectName: "project-ai-PII-Classifier"
+  SonarCloud_ProjectKey: "sceven_project-ai-PII-Classifier"
 
 stages:
   - stage: Publish_Docker_Artifacts
@@ -63,7 +63,7 @@ stages:
                 sonar.organization=$(SonarCloud_Organization)
                 
                 # This is the name and version displayed in the SonarCloud UI.
-                #sonar.projectName=Detect-AI
+                #sonar.projectName=project-ai
                 #sonar.projectVersion=1.0
                 
                 

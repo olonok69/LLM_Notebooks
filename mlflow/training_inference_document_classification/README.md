@@ -62,14 +62,14 @@ To contribute to this repository, you need to have experience in Python, serverl
 
     - Install Visual Studio Code or PyCharm.
     - Install Anaconda. Example for Windows: Anaconda Installation Guide for Windows.
-    - Clone the repository to your local machine: git clone https://dev.azure.com/sceven/DataDetect/_git/Detect-AI-Custom-Classifier.
+    - Clone the repository to your local machine: git clone https://dev.azure.com/sceven/DataDetect/_git/project-ai-Custom-Classifier.
 
     - Create a Conda environment from the environment.yml file (located at the root of our repository):
       - conda env create --file environment.yml
-      - conda activate detect-ai
+      - conda activate project-ai
     - Launch Jupyter Notebook with the command: jupyter notebook inside the environment.
 
-    - If you want to use Visual Studio Code, navigate to the root of the repo in a command line window, run conda activate detect-ai, and then code ..
+    - If you want to use Visual Studio Code, navigate to the root of the repo in a command line window, run conda activate project-ai, and then code ..
 
 # Endpoints / APIs
 

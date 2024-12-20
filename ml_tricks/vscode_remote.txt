@@ -7,7 +7,7 @@ https://code.visualstudio.com/docs/remote/ssh#_remember-hosts-and-advanced-setti
 example
 Host 172.173.199.194
   HostName 172.173.199.194
-  IdentityFile ~/.ssh/Detect-AI_key.pem
+  IdentityFile ~/.ssh/project-ai_key.pem
   User detectai
 
 
