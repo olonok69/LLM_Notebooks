@@ -1,0 +1,35 @@
+### Clean Repo
+https://github.com/rtyley/bfg-repo-cleaner
+https://rtyley.github.io/bfg-repo-cleaner/
+
+
+Mirror your repo
+git clone --mirror https://github.com/olonok69/Nim_LlamaIndex.git
+
+
+# Put secrets on a file
+echo secret >> secrets.txt
+
+# Run BFG 
+java -jar bfg.jar --replace-text secrets.txt Nim_LlamaIndex.git
+
+# Enter in clean repo and execute git reflog
+cd Nim_LlamaIndex.git
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+
+# Push changes
+git push
+
+# remove repo locally and clone the clean repository
+
+
+# Remove files large than 100M
+
+java -jar bfg.jar --strip-blobs-bigger-than 100M Nim_LlamaIndex.git
+
+
+### git filter
+
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch settings.json" --prune-empty --tag-name-filter cat -- backup_secrets
+
+git push origin backup_secrets --force

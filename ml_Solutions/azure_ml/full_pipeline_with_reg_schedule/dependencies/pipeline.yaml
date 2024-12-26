@@ -1,16 +1,16 @@
 compute: azureml:serverless
 creation_context:
   created_at: '2024-03-06T15:24:44.336181+00:00'
-  created_by: ***REMOVED***
+  created_by: 947fca35-35c1-4316-af96-dc987ad57f98
   created_by_type: Application
 description: E2E data_perp-train pipeline
 display_name: credit_defaults_pipeline
 experiment_name: e2e_registered_components
-id: azureml:/subscriptions/***REMOVED***/resourceGroups/olonok-ml/providers/Microsoft.MachineLearningServices/workspaces/azure-ml/jobs/kind_animal_yx7t4hdz3z
+id: azureml:/subscriptions/5a8ec57c-47f9-4bc3-aee5-9e4db1b89345/resourceGroups/olonok-ml/providers/Microsoft.MachineLearningServices/workspaces/azure-ml/jobs/kind_animal_yx7t4hdz3z
 inputs:
   pipeline_job_data_input:
     mode: ro_mount
-    path: azureml://subscriptions/***REMOVED***/resourcegroups/olonok-ml/workspaces/azure-ml/datastores/workspaceblobstore/paths/LocalUpload/4b1dfc4d12429b46389cabdf25b886a2/default_of_credit_card_clients.csv
+    path: azureml://subscriptions/5a8ec57c-47f9-4bc3-aee5-9e4db1b89345/resourcegroups/olonok-ml/workspaces/azure-ml/datastores/workspaceblobstore/paths/LocalUpload/4b1dfc4d12429b46389cabdf25b886a2/default_of_credit_card_clients.csv
     type: uri_file
   pipeline_job_learning_rate: '0.05'
   pipeline_job_registered_model_name: credit_defaults_model
@@ -58,10 +58,10 @@ properties:
   mlflow.source.git.repoURL: https://github.com/Azure/azureml-examples
 services:
   Studio:
-    endpoint: https://ml.azure.com/runs/kind_animal_yx7t4hdz3z?wsid=/subscriptions/***REMOVED***/resourcegroups/olonok-ml/workspaces/azure-ml&tid=***REMOVED***
+    endpoint: https://ml.azure.com/runs/kind_animal_yx7t4hdz3z?wsid=/subscriptions/5a8ec57c-47f9-4bc3-aee5-9e4db1b89345/resourcegroups/olonok-ml/workspaces/azure-ml&tid=b64b8697-93dc-4cc3-b2cf-8fa28f0b81f9
     type: Studio
   Tracking:
-    endpoint: azureml://uksouth.api.azureml.ms/mlflow/v1.0/subscriptions/***REMOVED***/resourceGroups/olonok-ml/providers/Microsoft.MachineLearningServices/workspaces/azure-ml?
+    endpoint: azureml://uksouth.api.azureml.ms/mlflow/v1.0/subscriptions/5a8ec57c-47f9-4bc3-aee5-9e4db1b89345/resourceGroups/olonok-ml/providers/Microsoft.MachineLearningServices/workspaces/azure-ml?
     type: Tracking
 status: NotStarted
 type: pipeline
