@@ -1,27 +1,26 @@
 ### Clean Repo
 https://github.com/rtyley/bfg-repo-cleaner
 https://rtyley.github.io/bfg-repo-cleaner/
-
+https://fabianlee.org/2019/03/24/git-bfg-for-removing-secrets-from-entire-git-history/
 
 Mirror your repo
-git clone --mirror https://github.com/olonok69/Nim_LlamaIndex.git
+git clone --mirror https://github.com/olonok69/test_cleaner.git
 
 
 # Put secrets on a file
-echo secret >> secrets.txt
+echo secret >> pass.txt
 
 # Run BFG 
-java -jar bfg.jar --replace-text secrets.txt Nim_LlamaIndex.git
+java -jar bfg.jar --replace-text pass.txt test_cleaner.git
 
 # Enter in clean repo and execute git reflog
-cd Nim_LlamaIndex.git
+cd test_cleaner.git
 git reflog expire --expire=now --all && git gc --prune=now --aggressive
 
 # Push changes
 git push
 
 # remove repo locally and clone the clean repository
-
 
 # Remove files large than 100M
 
@@ -33,3 +32,13 @@ java -jar bfg.jar --strip-blobs-bigger-than 100M Nim_LlamaIndex.git
 git filter-branch --force --index-filter "git rm --cached --ignore-unmatch settings.json" --prune-empty --tag-name-filter cat -- backup_secrets
 
 git push origin backup_secrets --force
+
+1)Instalar Java JRE y bajar BFG de la siguiente URL --> https://rtyley.github.io/bfg-repo-cleaner/
+2)Hacer un clonado de tu repositorio con --> git clone --mirror https://github.com/olonok69/test_cleaner.git
+3)Crea un fichero txt con las claves, credenciales , informacion privada que quieras eliminar ejemplo --> echo secret >> pass.txt
+4)Ejecuta el programa BFG en modo reemplazo de texto. Este ejemplo --> java -jar bfg.jar --replace-text pass.txt test_cleaner.git
+5)Entra en el directorio, Este ejemplo --> cd test_cleaner.git
+6)Implementa los cambios en el repositorio y limpiar. Este Ejemplo --> git reflog expire --expire=now --all && git gc --prune=now --aggressive
+7)Sube el repositorio limpio a GitHub --> git push
+
+Git,Github,bfg,clean secrets
