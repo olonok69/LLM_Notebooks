@@ -73,7 +73,7 @@ llama-embedding -m Llama-3.2-3B-Instruct-Q8_0-GGUF/llama-3.2-3b-instruct-q8_0.gg
 
 llama-cli -m Llama-3.2-3B-Instruct-Q8_0-GGUF/llama-3.2-3b-instruct-q8_0.gguf -p "The meaning to life and the universe is"
 
-./llama.cpp/build/bin/llama-cli --model /home/olonok/models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf --cache-type-k q8_0 --threads 16 --prompt '<｜User｜>I had a car 20 years ago, and its cost was 100000$. The car anual depreciation it is 5%.Using the Percentage (Declining Balance) method, what it is the value of the car now ? <｜Assistant｜>' --n-gpu-layers 20  -no-cnv
+./llama.cpp/build/bin/llama-cli --model /home/olonok/models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf --cache-type-k q8_0 --threads 16 --temp .75 --prompt '<｜User｜>I had a car 20 years ago, and its cost was 100000$. The car anual depreciation it is 5%.Using the Percentage (Declining Balance) method, what it is the value of the car now ? Be very concise. No Intermediary steps<｜Assistant｜>' --n-gpu-layers 20  -no-cnv
 # Langchain
 
 https://python.langchain.com/docs/integrations/text_embedding/llamacpp/
