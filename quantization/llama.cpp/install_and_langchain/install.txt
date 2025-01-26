@@ -1,0 +1,81 @@
+# Install WSL
+https://github.com/olonok69/LLM_Notebooks/tree/main/ml_tricks/wsl
+
+sudo  apt-get update
+
+
+## Install pyenv
+https://github.com/olonok69/LLM_Notebooks/blob/main/ml_tricks/pyenv/pyenv%20install.txt
+
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
+	libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev \
+	liblzma-dev python3-openssl git
+
+curl https://pyenv.run | bash
+
+
+##INSTALL CMAKE
+https://cmake.org/download/
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates gnupg software-properties-common wget
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | sudo apt-key add -
+
+sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
+sudo apt-get update
+
+sudo wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+sudo apt-get install cmake
+
+
+
+### LLAMA CPP
+
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp
+
+https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md
+https://github.com/ggerganov/llama.cpp/tree/master/examples/main
+https://github.com/ggerganov/llama.cpp/tree/master/examples/embedding
+
+https://huggingface.co/hugging-quants/Llama-3.2-3B-Instruct-Q8_0-GGUF
+
+https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF/tree/main
+
+## CPU build
+cmake -B build
+cmake --build build --config Release -j8
+
+##  Install cache -->sudo apt-get install ccache
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=runfile_local
+
+## Install cuda toolkit
+wget https://developer.download.nvidia.com/compute/cuda/12.6.2/local_installers/cuda_12.6.2_560.35.03_linux.run
+sudo sh cuda_12.6.2_560.35.03_linux.run
+
+## caso no nvcc
+export PATH="/usr/local/cuda-12.6/bin:$PATH"`
+export LD_LIBRARY_PATH="/usr/local/cuda-12.6/lib64:$LD_LIBRARY_PATH"
+
+## BUILD GPU
+cmake -B build -DGGML_CUDA=ON
+cmake --build build --config Release
+
+### LLAMA-CPP-PYTHON
+CMAKE_ARGS="-DGGML_CUDA=ON -DCUDA_PATH=/usr/local/cuda-12.6 -DCUDAToolkit_ROOT=/usr/local/cuda-12.6 -DCUDAToolkit_INCLUDE_DIR=/usr/local/cuda-12.6/include -DCUDAToolkit_LIBRARY_DIR=/usr/local/cuda-12.6/lib64" FORCE_CMAKE=1 pip install llama-cpp-python --no-cache-dir
+
+
+# INFERENCE CLI
+llama-embedding -p 'Castle<#sep#>Stronghold<#sep#>Dog<#sep#>Cat' --pooling mean --embd-separator '<#sep#>' --embd-normalize 2  --embd-output-format '' -m Llama-3.2-3B-Instruct-Q8_0-GGUF/llama-3.2-3b-instruct-q8_0.gguf --n-gpu-layers 99 --log-disable 2>/dev/null
+
+llama-embedding -m Llama-3.2-3B-Instruct-Q8_0-GGUF/llama-3.2-3b-instruct-q8_0.gguf --pooling mean -p "Hello world"
+
+llama-cli -m Llama-3.2-3B-Instruct-Q8_0-GGUF/llama-3.2-3b-instruct-q8_0.gguf -p "The meaning to life and the universe is"
+
+./llama.cpp/build/bin/llama-cli --model /home/olonok/models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf --cache-type-k q8_0 --threads 16 --prompt '<｜User｜>I had a car 20 years ago, and its cost was 100000$. The car anual depreciation it is 5%.Using the Percentage (Declining Balance) method, what it is the value of the car now ? <｜Assistant｜>' --n-gpu-layers 20  -no-cnv
+# Langchain
+
+https://python.langchain.com/docs/integrations/text_embedding/llamacpp/
+https://python.langchain.com/docs/integrations/llms/llamacpp/
+
+
