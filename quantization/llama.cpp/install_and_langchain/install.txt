@@ -47,9 +47,10 @@ cmake -B build
 cmake --build build --config Release -j8
 
 ##  Install cache -->sudo apt-get install ccache
+## Install Cuda ToolKit
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=runfile_local
 
-## Install cuda toolkit
+
 wget https://developer.download.nvidia.com/compute/cuda/12.6.2/local_installers/cuda_12.6.2_560.35.03_linux.run
 sudo sh cuda_12.6.2_560.35.03_linux.run
 
