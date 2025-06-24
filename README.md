@@ -3,6 +3,7 @@
 This Repository contains all material supporting the Videos in my YouTube channel The Machine Learning Engineer https://www.youtube.com/channel/UCqAi1lTsd2wj7p05-Oos4ug
 
 Look to the Playlist bellow to understand which kind of Material we have on the channel and here.
+Note. I dont Attend issues i github. Please connect in youtube
 
 The best way to find some information it is look for in the channel for a topic. There, if something matches what you are looking for, watch the video, and each of them contains a link to this repository on the description of the Video. Per Video I explain something, and we follow a Notebook or Code in VSCode. Python and C#, but mostly Python.
 Videos are in English and Spanish. Each Video has the counterpart in the other Language, I think it is easy to differentiate just looking at the Title of the Video
