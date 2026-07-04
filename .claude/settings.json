@@ -2,7 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(python -c ' *)",
-      "Bash(python)"
+      "Bash(python)",
+      "Bash(python -c \"import pptx; print\\('python-pptx', pptx.__version__\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -c \"import pptx; print\\('OK', pptx.__version__\\)\")",
+      "Bash(python -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(python -m pip install python-pptx -q)",
+      "Bash(/c/Python313/python.exe -c \"import pptx; print\\('OK', pptx.__version__\\)\")",
+      "Bash(/c/Python313/python.exe \"C:\\\\Users\\\\User\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--repos-LLM-Notebooks\\\\eacce983-4096-48e4-a9f7-cd5a84bb2d72\\\\scratchpad\\\\build_deck.py\")",
+      "Bash(where soffice *)",
+      "Read(//c/Program Files/LibreOffice/program/**)",
+      "Bash(/c/Python313/python.exe -c ' *)",
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \" Super_Resolution_Tecnicas.md)",
+      "Bash(/c/Python313/python.exe \"C:\\\\Users\\\\User\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--repos-LLM-Notebooks\\\\eacce983-4096-48e4-a9f7-cd5a84bb2d72\\\\scratchpad\\\\insert_slide.py\")"
     ]
   }
 }
