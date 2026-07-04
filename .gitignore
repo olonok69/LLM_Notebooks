@@ -12,3 +12,7 @@ mlflow/mlflow.db
 mlflow/mlruns
 ml_Solutions/azure_ml/finetune_classification/.env
 ml_Solutions/azure_ml/finetune_classification/emotion-dataset
+microsoft/ml_dot_net/
+microsoft/semantic-kernel/
+
+nlp/language_detection/csharp/cld_3/lang_detector/obj/
