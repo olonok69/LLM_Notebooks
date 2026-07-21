@@ -14,6 +14,8 @@
 
 ---
 
+
+
 ## Índice
 
 1. [Recordatorio: el problema del reescalado](#1-recordatorio-el-problema-del-reescalado)
