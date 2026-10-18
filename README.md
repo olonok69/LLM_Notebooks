@@ -26,11 +26,14 @@ The videos and the notebooks in this repository are public. Shorts are not liste
 
 <!-- playlist-index -->
 
-## Playlists
+## Courses
 
 - [Computer Vision](playlists/computer-vision.md) — 25 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6hmy_ZMPApeXmgWy2gzwzHt)
-- [Computer Vision](playlists/computer-vision-tpcmgy.md) — 4 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6hi1Prgpx3gJnoFXgtPcmgY)
 - [GDPR / PII Detection with Spacy](playlists/gdpr-pii-detection-with-spacy.md) — 1 video. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6hpGHxRoz7qEdwiaHRe0ZVv)
+
+## Playlists
+
+- [Computer Vision](playlists/computer-vision-tpcmgy.md) — 4 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6hi1Prgpx3gJnoFXgtPcmgY)
 - [Generative AI, LLM,s, Transformers, CV, NLP and more](playlists/generative-ai-llm-s-transformers-cv-nlp-and-more.md) — 212 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6hJTGshlRfNtcLOA1yoygzK)
 - [Google ML and AI](playlists/google-ml-and-ai.md) — 22 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6gxfC3-WMveVWWIDCrJrNwP)
 - [Langchain](playlists/langchain.md) — 51 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6gbrGi2oS7roT3DCztJXEfL)
@@ -47,6 +50,7 @@ The videos and the notebooks in this repository are public. Shorts are not liste
 ## Courses in Spanish
 
 - [Curso Computer Vision en Español](playlists/curso-computer-vision-en-espanol.md) — 23 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6hxvtTa2ePyjgdXstA51qNd)
+- [GDPR/ PII Detection with Spacy (Español)](playlists/gdpr-pii-detection-with-spacy-espanol.md) — 1 video. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6gpdsa4yTirgubJYQBESyUp)
 
 ## Playlists in Spanish
 
@@ -56,7 +60,6 @@ The videos and the notebooks in this repository are public. Shorts are not liste
 - [(Español) LlamaIndex](playlists/espanol-llamaindex.md) — 6 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6iUwtmeWXvXbQjLCbt-X6kz)
 - [(Español) RAG Retrieval Augmented Generation](playlists/espanol-rag-retrieval-augmented-generation.md) — 27 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6iyzMKOYvIWhjkIHkhZhB7X)
 - [Databricks ML y MLOps Español](playlists/databricks-ml-y-mlops-espanol.md) — 11 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6iO-RWANY7xuwm_PLqapTpG)
-- [GDPR/ PII Detection with Spacy (Español)](playlists/gdpr-pii-detection-with-spacy-espanol.md) — 1 video. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6gpdsa4yTirgubJYQBESyUp)
 - [LangChain Español](playlists/langchain-espanol.md) — 50 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6giwdwBZKPtPGahLaJPdcj7)
 - [Microsoft AI and ML Projects Español](playlists/microsoft-ai-and-ml-projects-espanol.md) — 29 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6glG7jrnHQduYRM-xzkLF2B)
 - [ML projects Español](playlists/ml-projects-espanol.md) — 84 videos. [YouTube](https://www.youtube.com/playlist?list=PLw-i55H2Io6jNdsoeoEBw0BZX37pkLDO3)
