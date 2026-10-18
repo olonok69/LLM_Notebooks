@@ -1,0 +1,18 @@
+# Otros videos
+
+Los videos y los notebooks de esta lista son públicos.
+
+| Tema | Proyecto | Descripción | Notebook | Video |
+|------|---------|-------------|----------|-------|
+| ml tricks | Instalar nuevo Kernel en Jupyter or Jupyter Lab Español | En este video te voy a explicar como instalar un nuevo entorno en conda e instalarlo como un nuevo kernel con un nombre que lo identifique | [Notebook](../ml_tricks/jupiter_kernel.txt) | [▶️ Video](https://youtu.be/tuKFcKhJAIg) |
+| ml tricks | Como limpiar la cache de tu GPU con Pytorch y liberar memoria realmente | Como liberar realmente memoria de tu GPU y como funciona el comando empty_cache() de pytorch #pytorch #machinelearning | [Notebook](../ml_tricks/gpu_clean.ipynb) | [▶️ Video](https://youtu.be/Qc7TDrRtFcI) |
+| Prompt engineering | Porque los LLMs son malos razonadores y necesitan nuestra ayuda | #Short Demostration why it is important prompt Enginiering and context | [Notebook](../Prompt_engineering/Langchain_OpenAI_zero_shot.ipynb) | [▶️ Video](https://youtu.be/fp40llUvQME) |
+| llms | Los LLM,s tienen alucinaciones , quieres verlo? | #Short Alucinaciones en LLM,s | [Notebook](../llms/LLM_Hallucinations.ipynb) | [▶️ Video](https://youtu.be/odLBU-oifJE) |
+| ml tricks | How to serve Flask / FastAPI app in google Colab Español | En este vídeo te mostrare como servir aplicaciones Flask o FastAPI en Google Colab o en Cloud Infraestructura | [Notebook](../ml_tricks/pyngrok_Colab_HTTP.ipynb) | [▶️ Video](https://youtu.be/0awPJ9jvfrI) |
+| ml tricks | Use of GPU,s in Docker and Docker Compose Español | En este vídeo te mostrare como configurar tu instalación de Docker para que funcione correctamente con una GPU | [Notebook](../ml_tricks/GPU%20with%20Docker.txt) | [▶️ Video](https://youtu.be/8ILPm8BURa4) |
+| ml tricks | Uso Get_ipython para comunicarte con tu OS desde tu aplicación python Español | como usar la librería Ipython y el metodo get_ipython para obtener una shell interactiva en ti aplicación python y comunicarte con tu sistema operativo | [Notebook](../ml_tricks/get_ipython.ipynb) | [▶️ Video](https://youtu.be/XZfs-Y-jSx4) |
+| ml tricks | Instalar Jupyter y Jupyter Lab en tu entorno conda Español | En este video te voy a explicar como Instalar Jupyter y Jupyter Lab en tu entorno conda | [Notebook](../ml_tricks/jupiter_kernel.txt) | [▶️ Video](https://youtu.be/DTRUyxPc8dM) |
+| ml tricks | Pyenv: Como instalar y administrar múltiples versiones de Python en tu OS | pyenv nos permite instalar múltiples versiones de python en tu OS, entornos virtuales y cambiar de una a otra muy fácilmente. En el "Related video tienes toda la informacion" | [Notebook](../ml_tricks/pyenv/pyenv%20install.txt) | [▶️ Video](https://youtu.be/pSkKxy8wIk4) |
+| ml tricks | Pyenv: Como Instalar múltiples versiones de python | pyenv nos permite instalar múltiples versiones de python en tu OS, entornos virtuales y cambiar de una a otra muy fácilmente. En el &quot;Related video tienes toda la informacion&… | [Notebook](../ml_tricks/pyenv/pyenv%20install.txt) | [▶️ Video](https://youtu.be/7W84X4jiyIs) |
+| llms | LLM,s: Evaluation DeepSeek 1.5 quantized 4Int CoT (Español) | En este vídeo vamos a evaluar las capacidades de razonamiento de DeepSeek 1,5 Billones de parámetros utilizando Chain Of Thought Prompts | [Notebook](../llms/OLLama_DeepSeek_Phi3_5_LLama3_2.ipynb) | [▶️ Video](https://youtu.be/vwzoQTlxKMA) |
+| ml tricks | ML tricks: Visualiza Contenido en tu Jupyter Notebook | En este Video Vamos a ver como Visualizar Contenido (Audio, Vídeo, Images, GeoData, Markdown, Youtube) en un Notebook usando la librería Ipython display | [Notebook](../ml_tricks/colab/Visualize_media_content_jupyter.ipynb) | [▶️ Video](https://youtu.be/fduywaltxD4) |
